@@ -102,6 +102,49 @@ public class lab5 {
          {
              System.out.println("Invalid input.");
          }
+	 Scanner sc = new Scanner(System.in);        
+         System.out.println("Enter 0 or 1 for exchange rate: ");  
+         double rate = sc.nextDouble();
+         System.out.println("1: to convert from Dollar to TL\n 0:to convert from TL to Dollar.");
+         int choice=sc.nextInt();
+         double amount;
+         if(choice == 1){             
+             System.out.println("Enter amount in Dollar: ");
+             amount=sc.nextDouble();
+             amount=amount*rate;
+             System.out.println(amount * 19.10 + "TL");
+         }            
+         else if(choice==0)
+         {   
+         System.out.println("Enter amount in TL: ");    
+         amount = sc.nextDouble();          
+         amount=amount/rate;   
+         System.out.println(amount / 19.10 + "Dollar");
+         }
+         else
+         {
+             System.out.println("Invalid input.");
+         }
+	 
+         Scanner scanner = new Scanner(System.in);    
+         System.out.print ("Enter a character: "); 
+         char input = scanner.next().charAt(0);     
+         if (input >= 'A' && input <= 'Z') {
+
+         System.out.println(input + " is an uppercase letter.");     
+         } 
+         else if (input >= 'a' && input <= 'z')
+         {            
+             System.out.println(input + " is a lowercase letter.");     
+         } 
+         else if (input >= '0' && input <= '9')
+         {      
+             System.out.println(input + " is a digital character.");  
+         } 
+         else 
+         {          
+          System.out.println(input + " is not an uppercase letter, lowercase letter, or digital character.");     
+         }     
             
         
          
