@@ -1,0 +1,111 @@
+package com.mycompany.firstprogram;
+
+import java.util.Scanner;
+
+ 
+public class lab5 {
+     public static void main(String[] args) {
+         
+         Scanner stuff =new Scanner(System.in);
+         System.out.println("Enter a number: ");
+         int number=stuff.nextInt();
+         int sum=0;
+         int reminder;
+         int c=number;
+         while(number>0)
+         {
+             reminder=number%10;
+             sum=reminder+(sum*10);
+             number=number/10;
+         }
+         if(c==sum)
+         {
+             System.out.println("Palindrome number.");
+         }
+         else
+         {
+             System.out.println("It's not.");
+         }
+         
+        
+		//Ex: mom, dad, poop, race car, nurses run
+		
+		String original = "nurses rund";
+		original = original.replace(" ", "");
+		
+		String reverse = "";
+		for(int i = original.length() - 1; i >= 0; i--) {
+			reverse += original.charAt(i);
+			System.out.println(reverse);
+		}
+		
+		boolean palindrome = true;
+		for(int i = 0; i < original.length(); i++) {
+			if(original.charAt(i) != reverse.charAt(i)) {
+				palindrome = false;
+			}
+		}
+		
+		if(palindrome) {
+			System.out.println("PALINDROME!");
+		} else {
+			System.out.println("Not a palindrome!");
+		}
+                
+         
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Enter a string:");
+         String str=sc.nextLine();
+         int count=0;
+         for(int counter=0; counter<str.length(); counter++)
+         {
+             if(str.charAt(counter)==str.charAt(str.length()-1-counter))
+                 count=counter+1;
+         }
+         if(count==str.length())
+         {
+             System.out.println("The string"+str+" is palindrome.");
+         }
+         else
+         {
+             System.out.println("It is not a palindrome.");
+         }
+         
+         
+         Scanner TL =new Scanner(System.in);
+         System.out.println("Enter TL: ");
+         double TurkishLira= TL.nextDouble();
+         double dolar= TurkishLira/19.29;
+         System.out.println(TurkishLira+ " are " +dolar+ "dolars.");
+         
+         
+         Scanner sc = new Scanner(System.in);        
+         System.out.println("Enter 0 or 1 for exchange rate: ");  
+         double rate = sc.nextDouble();
+         System.out.println("1: to convert from Dollar to TL\n 0:to convert from TL to Dollar.");
+         int choice=sc.nextInt();
+         double amount;
+         if(choice == 1){             
+             System.out.println("Enter amount in Dollar: ");
+             amount=sc.nextDouble();
+             amount=amount*rate;
+             System.out.println(amount * 19.10 + "TL");
+         }            
+         else if(choice==0)
+         {   
+         System.out.println("Enter amount in TL: ");    
+         amount = sc.nextDouble();          
+         amount=amount/rate;   
+         System.out.println(amount / 19.10 + "Dollar");
+         }
+         else
+         {
+             System.out.println("Invalid input.");
+         }
+            
+        
+         
+       
+     }
+    
+}
