@@ -1,0 +1,56 @@
+public class Main { //non-static field
+    public int number1=6; //non-static
+    public static int number2=6; //static
+    public static void main(String[] args) /*static field*/ {
+        int number=5;
+        number=7;
+        System.out.println(number);
+        /*number1=4; non-static variable number1 cannot be referenced from a static context*/
+        number2=8;
+        System.out.println(number2); //8
+        Main main=new Main(); //In order to access a value from non-static to static.
+        main.number1=9;
+        System.out.println(main.number1); //9
+
+        Person person=new Person();
+        Person person1=new Person();
+        person.firstName="Mustafa";
+        person1.firstName="Doktor";
+        person.lastName="Ulusoy";
+        person1.lastName="Mavi";
+        person.age=40;
+        person1.age=35;
+        System.out.println(person.firstName+person.lastName);
+        System.out.println(person1.firstName+person1.lastName);
+
+        Ford focus=new Ford();
+        Ford mondeo=new Ford();
+        System.out.println(focus.numberOfGears);
+        System.out.println(mondeo.numberOfGears);
+
+        focus.numberOfGears=6;
+        mondeo.numberOfGears=5;
+        System.out.println(focus.numberOfGears); //5 It didn't get copied. //shallow copy I guess. It holds only one copy in statics.
+        Ford.numberOfGears=8;
+        System.out.println(Ford.numberOfGears); //8
+        //You can access static variables by only class name.
+        //You can access instance variables by objectives.
+        //In order to change the value.
+
+
+    }
+}
+
+public class Ford { //static variables i guess
+    public static int numberOfGears=7;
+
+}
+public class Person {
+    //instance variables that holds attributes.
+    public String firstName;
+    public String lastName;
+    public int age;
+    public int height;
+    public int weight;
+
+}
